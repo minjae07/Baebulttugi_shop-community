@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="refresh"
-	content="3; url=http://localhost:8088/project/index.jsp">
+	content="2; url=http://localhost:8088/project/index.jsp">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>

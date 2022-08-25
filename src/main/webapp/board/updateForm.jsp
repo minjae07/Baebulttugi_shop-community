@@ -5,15 +5,17 @@
 <head>
 <title>'배불뚝이'-산모를 위한 사이트</title>
 <link href="style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="script.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
+
  
 <body bgcolor="<%=bodyback_c%>">
 	<jsp:include page="/board/boardHeader.jsp"></jsp:include>
 	
 	<center>
 		<b>글수정</b> <br>
-		<form method="post" name="writeform" action="boardUpdatePro.bo?pageNum=${pagenum }" onsubmit="return writeSave()">
+		<form method="post" name="writeform" action="boardUpdatePro.bo?pageNum=${pageNum }" onsubmit="return writeSave()">
 			<table width="400" border="1" cellspacing="0" cellpadding="0" bgcolor="<%=bodyback_c%>" align="center">
 				<tr>
 					<td width="70" bgcolor="<%=value_c%>" align="center">이 름</td>

@@ -1,6 +1,6 @@
 package login.action;
 
-import java.io.PrintWriter; 
+import java.io.PrintWriter;  
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +17,8 @@ public class MemberLoginAction implements Action {
 		// TODO Auto-generated method stub
 		String id = request.getParameter("id");
 		String passwd = request.getParameter("passwd");
+		
+		
 		MemberLoginService memberLoginService = new MemberLoginService();
 		
 		boolean loginSuccess = memberLoginService.login(id,passwd);

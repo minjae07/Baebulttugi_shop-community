@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   
+    <% 
+  String loginId = (String)session.getAttribute("loginId");
+  %>
   
 <!DOCTYPE html>
 <html lang="ko">
@@ -22,12 +24,13 @@
 <body>
    
 <jsp:include page="/mainPage/header.jsp"></jsp:include>
-
+<%  if(loginId != null ){%>
 <header>
 <!-- Navigation (모아보기) -->
- <div style="height: 500px; width:auto; padding:1px 100px 1px;">
+  <div style="height: 500px; width:auto; padding:1px 360px 1px;">
 <jsp:include page="/view/slideShow2.jsp"></jsp:include>
 </div>
+
 
 <!--  게시판 링크  -->
 <br><br>
@@ -37,14 +40,14 @@
                     <div class="otherArea">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            <a href=#모아보기><h3>모아보기</h3></a>
+                            <a><h3>모아보기</h3></a>
                             <p class="lead mb-0">정부정책뿐만 아니라 지역별 지원정책이나 임신관련 소식이 모아져 있습니다.</p>
                         </div>
                     </div>
                     <div class="otherArea">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            <a href=#쇼핑몰><h3>쇼핑몰</h3></a>
+                            <a href=./product/index.jsp><h3>쇼핑몰</h3></a>
                             <p class="lead mb-0">산모에게 필요한 모든 제품</p>
                         </div>
                     </div>
@@ -58,10 +61,51 @@
                 </div>
             </div>
         </section>
-    
-    
    </header>
+ <% } 
+	else {%>
+	
+	<header>
+<!-- Navigation (모아보기) -->
+ <div style="height: 500px; width:auto; padding:1px 360px 1px;">
+<jsp:include page="/view/slideShow2.jsp"></jsp:include>
+</div>
 
+
+<!--  게시판 링크  -->
+<br><br>
+        <section class="features-icons bg-light text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="otherArea">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                            <a><h3>모아보기</h3></a>
+                            <p class="lead mb-0">정부정책뿐만 아니라 지역별 지원정책이나 임신관련 소식이 모아져 있습니다.</p>
+                        </div>
+                    </div>
+                    <div class="otherArea">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                            <a><h3>쇼핑몰</h3></a>
+                            <p class="lead mb-0">산모에게 필요한 모든 제품</p>
+                        </div>
+                    </div>
+                    <div class="otherArea">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
+                            <a><h3>커뮤니티</h3></a>
+                            <p class="lead mb-0">산모들의 이야기</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+   </header>
+   
+	<%
+	}
+	%>
     
    <!-- 이미지 슬라이드 -->
    <section class="showcase">
@@ -95,6 +139,7 @@
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                <h2>업데이트 정보</h2>
                <p class="lead mb-0" >220720 ver1. mainPage UI 구성(이지후)</p>
+               <p class="lead mb-0" >220815 ver2. 쇼핑몰 업데이트</p>
             </div>
          </div>
       </div>
@@ -109,17 +154,17 @@
             <div class="col-lg-4">
                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                   <img class="img-fluid rounded-circle mb-3"
-                     src="mainPage/img/testimonials-1.jpg" alt="..." />
+                     src="mainPage/img/B.jpg" alt="..." />
                   <h5>이지후</h5>
-                  <p class="font-weight-light mb-0">이지후 설명</p>
+                  <p class="font-weight-light mb-0"> 안녕하세요 </p>
                </div>
             </div>
             <div class="col-lg-4">
                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                   <img class="img-fluid rounded-circle mb-3"
-                     src="mainPage/img/testimonials-2.jpg" alt="..." />
+                      src="mainPage/img/A.jpg" alt="..." />
                   <h5>배민재</h5>
-                  <p class="font-weight-light mb-0">배민재 설명</p>
+                  <p class="font-weight-light mb-0">반갑습니다.</p>
                </div>
             </div>
          </div>

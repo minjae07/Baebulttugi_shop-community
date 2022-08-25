@@ -2,10 +2,13 @@
 <%@ page import="vo.BoardVO"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ include file="/view/color.jsp"%>
+
 <html>
 <head>
 <title>'배불뚝이'-산모를 위한 사이트</title>
 <link href="style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <%
@@ -18,47 +21,51 @@ int ref = article.getRef();
 int re_step = article.getRe_step();
 int re_level = article.getRe_level();
 %>
-<body bgcolor="<%=bodyback_c%>">
-	<jsp:include page="/board/boardHeader.jsp"></jsp:include>
 
-	<center>
-		<b>게시글</b> <br>
-		<form>
-			<table width="800" border="1" cellspacing="0" cellpadding="0" bgcolor="<%=bodyback_c%>" align="center">
-				<tr height="30">
-					<td align="center" width="125" bgcolor="<%=value_c%>">글번호</td>
-					<td align="center" width="125" align="center"><%=num%></td>
-					<td align="center" width="125" bgcolor="<%=value_c%>">조회수</td>
-					<td align="center" width="125" align="center"><%=article.getReadcount()%></td>
-				</tr>
-				<tr height="30">
-					<td align="center" width="125" bgcolor="<%=value_c%>">작성자</td>
-					<td align="center" width="125" align="center"><%=article.getWriter()%></td>
-					<td align="center" width="125" bgcolor="<%=value_c%>">작성일</td>
-					<td align="center" width="125" align="center"><%=article.getReg_date()%></td>
-				</tr>
-				<tr height="30">
-					<td align="center" width="125" bgcolor="<%=value_c%>">글제목</td>
-					<td align="center" width="375" align="center" colspan="3"><%=article.getSubject()%></td>
-				</tr>
-				<tr>
-					<td align="center" width="125" bgcolor="<%=value_c%>">글내용</td>
-					<td align="left" width="375" colspan="3"><pre> <%=article.getContent()%></pre></td>
-				</tr>
-				<tr height="30">
-					<td colspan="4" bgcolor="<%=value_c%>" align="right"><input
-						type="button" value="글수정"
-						onclick="document.location.href='boardUpdateForm.bo?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
-						&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="글삭제"
-						onclick="document.location.href='boardDeleteForm.bo?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
-						&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="답글쓰기"
-						onclick="document.location.href='boardWriteForm.bo?num=<%=article.getNum()%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
-						&nbsp;&nbsp;&nbsp;&nbsp; <input type="button" value="글목록"
-						onclick="document.location.href='boardList.bo?pageNum=<%=pageNum%>'">
-					</td>
-				</tr>
-			</table>
-		</form>
+
+<body bgcolor="<%=bodyback_c%>">
+   <jsp:include page="/board/boardHeader.jsp"></jsp:include>
+
+   <center>
+      <b>게시글</b> <br>
+      <form>
+         <table width=auto; border="1" cellspacing="0" cellpadding="0" bgcolor="<%=bodyback_c%>" align="center">
+            <tr height="30">
+               <td align="center" width="125" bgcolor="<%=value_c%>">글번호</td>
+               <td align="center" width="125" align="center" bgcolor="#FFFFFF"><%=num%></td>
+               <td align="center" width="125" bgcolor="<%=value_c%>">조회수</td>
+               <td align="center" width="125" align="center" bgcolor="#FFFFFF"><%=article.getReadcount()%></td>
+            </tr>
+            <tr height="30">
+               <td align="center" width="125" bgcolor="<%=value_c%>">작성자</td>
+               <td align="center" width="125" align="center" bgcolor="#FFFFFF"><%=article.getWriter()%></td>
+               <td align="center" width="125" bgcolor="<%=value_c%>">작성일</td>
+               <td align="center" width="125" align="center" bgcolor="#FFFFFF"><%=article.getReg_date()%></td>
+            </tr>
+            <tr height="30">
+               <td align="center" width="125" bgcolor="<%=value_c%>">글제목</td>
+               <td align="center" width="375" align="center" colspan="3" bgcolor="#FFFFFF"><%=article.getSubject()%></td>
+            </tr>
+            <tr>
+               <td align="center" width="125" bgcolor="<%=value_c%>">글내용</td>
+               <td align="left" width="375" colspan="3" bgcolor="#FFFFFF"><pre> <%=article.getContent()%></pre></td>
+            </tr>
+            <tr height="30">
+               <td colspan="4" bgcolor="<%=value_c%>" align="right">
+               <input type="button" value="글수정"
+                  onclick="document.location.href='boardUpdateForm.bo?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
+                  &nbsp;&nbsp;&nbsp;&nbsp; 
+                  <input type="button" value="글삭제" onclick="document.location.href='boardDeleteForm.bo?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'"> 
+                  &nbsp;&nbsp;&nbsp;&nbsp; 
+                  <input type="button" value="답글쓰기" onclick="document.location.href='boardWriteForm.bo?num=<%=article.getNum()%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="button" value="글목록" onclick="document.location.href='boardList.bo?pageNum=<%=pageNum%>'">
+               </td>
+            </tr>
+         </table>
+      </form>
+      <!-- 댓글 -->
+     
 </body>
 
 <jsp:include page="/board/boardFooter.jsp"></jsp:include>

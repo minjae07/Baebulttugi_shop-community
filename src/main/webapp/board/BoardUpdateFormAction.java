@@ -13,7 +13,7 @@ public class BoardUpdateFormAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		int num = Integer.parseInt(request.getParameter("num"));
-		String pageNum = request.getParameter("pageNum");
+		String pageNum = request.getParzameter("pageNum");
 		
 		BoardUpdateFormService boardUpdateFormService = new BoardUpdateFormService();
 		

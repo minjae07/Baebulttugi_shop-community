@@ -28,6 +28,15 @@
 		//자기자신을 가리키는 메소드. self.close(); 자기자신창을닫음
 		//close();		
 	}
+	function noSpaceForm(obj) { // 공백사용못하게
+	    var str_space = /\s/;  // 공백체크
+	    if(str_space.exec(obj.value)) { //공백 체크
+	        //alert("해당 항목에는 공백을 사용할수 없습니다.\n\n공백은 자동적으로 제거 됩니다.");
+	        obj.focus();
+	        obj.value = obj.value.replace(/\s| /gi,''); // 공백제거
+	        return false;
+	    }
+	}
 </script>
 </head>
 <body>
@@ -35,10 +44,10 @@
 <%
 	if(idExist){
 %>
-<h1>새로운 아이디 입력</h1>
+<h1>다른 아이디를 입력해주세요</h1>
 <form action="idCheck.me">
 	<label for = "memberId">아이디 : </label>
-	<input type = "text" name = "memberId" id="memberId"><br>
+	<input type = "text" name = "memberId" id="memberId" onkeyup="noSpaceForm(this);" onchange="noSpaceForm(this);"><br>
 	<input type = "submit" value = "전송">
 </form>
 <%

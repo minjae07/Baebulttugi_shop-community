@@ -14,6 +14,7 @@ import login.action.MemberIdCheckAction;
 import login.action.MemberLoginAction;
 import login.action.MemberLogoutAction;
 import login.action.MemberRegistAction;
+import login.action.MemberUpdateAction;
 import login.action.MemberzipSearchAction;
 import vo.ActionForward;
 
@@ -40,16 +41,16 @@ public class MemberFrontController extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String requestURI = request.getRequestURI();
-		// ¿äÃ» URL : http://localhost:8088/LoginProject/login.me
+		// ìš”ì²­ URL : http://localhost:8088/LoginProject/login.me
 		// requestURI : /LoginProject/login.me
 
 		String contextPath = request.getContextPath();
-		// ¿äÃ» URL : http://localhost:8088/LoginProject/login.me
+		// ìš”ì²­ URL : http://localhost:8088/LoginProject/login.me
 		// contextPath : /LoginProject
 
 		String command = requestURI.substring(contextPath.length());
 		// /login.me
-		// 2. ¿äÃ»º° ºñÁö´Ï½º·ÎÁ÷ ½ÇÇà
+		// 2. ìš”ì²­ë³„ ë¹„ì§€ë‹ˆìŠ¤ë¡œì§ ì‹¤í–‰
 		ActionForward forward = null;
 		Action action = null;
 
@@ -94,11 +95,19 @@ public class MemberFrontController extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+			
+			/*
+			 * }else if (command.equals("/login/memberUpdate.me")) { action = new
+			 * MemberUpdateAction(); try { forward = action.execute(request, response); }
+			 * catch (Exception e) { // TODO Auto-generated catch block e.printStackTrace();
+			 * }
+			 */
+			}
+		
 
-		// 3.ºäÆäÀÌÁö·Î Æ÷¿öµù
+		// 3.ë·°í˜ì´ì§€ë¡œ í¬ì›Œë”©
 		if (forward != null) {
-			// ¿äÃ»Ã³¸®°¡ Á¦´ë·ÎµÇ¾ú´Ù¸é..
+			// ìš”ì²­ì²˜ë¦¬ê°€ ì œëŒ€ë¡œë˜ì—ˆë‹¤ë©´..
 			if (forward.isRedirect()) {
 				response.sendRedirect(forward.getUrl());
 			} else {
@@ -107,7 +116,7 @@ public class MemberFrontController extends HttpServlet {
 			}
 		}
 
-	}// doget¿¡ ¿äÃ»Ã³¸®.
+	}// dogetì— ìš”ì²­ì²˜ë¦¬.
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
@@ -118,6 +127,8 @@ public class MemberFrontController extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		doGet(request, response);
-	}// Post¹æ½ÄÀ¸·Î ³Ñ¾î¿ÔÀ» ¶§ ÇÑ±ÛÃ³¸®¸¦ ÇØ¾ßÇÏ´Â °æ¿ì.. request.setCharacterEncoding("UTF-8");
+	}// Postë°©ì‹ìœ¼ë¡œ ë„˜ì–´ì™”ì„ ë•Œ í•œê¸€ì²˜ë¦¬ë¥¼ í•´ì•¼í•˜ëŠ” ê²½ìš°.. request.setCharacterEncoding("UTF-8");
 
+	
+	
 }

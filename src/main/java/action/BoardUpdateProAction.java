@@ -30,13 +30,13 @@ public class BoardUpdateProAction implements Action {
 		BoardUpdateProService boardUpdateProService	= new BoardUpdateProService();
 		
 		boolean modifySuccess = boardUpdateProService.modifyArticle(article);
-		
 		ActionForward forward = null;
 		
 		if(modifySuccess) {
 			forward = new ActionForward();
-			forward.setUrl("boardList.bo?pageNum=" + request.getParameter("pageNum"));
+			forward.setUrl("boardList.bo?pageNum="+request.getParameter("pageNum"));
 			forward.setRedirect(true);
+			
 		}
 		else {
 			response.setContentType("text/html;charset=UTF-8");

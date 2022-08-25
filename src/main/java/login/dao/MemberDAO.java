@@ -46,6 +46,7 @@ public class MemberDAO {
 			pstmt.setString(1,id);
 			pstmt.setString(2,passwd);
 			
+			
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {

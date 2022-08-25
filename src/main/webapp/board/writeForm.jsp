@@ -1,11 +1,15 @@
 <%@page import="vo.ReplyVO"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/view/color.jsp"%>
+  <% 
+  String loginId = (String)session.getAttribute("loginId");
+  %>
 <html>
 <head>
 <title>'배불뚝이'-산모를 위한 사이트</title>
 <link href="style.css" rel="stylesheet" type="text/css">
-<script language="JavaScript" src="script.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <%
@@ -33,7 +37,7 @@ int re_level = replyVO.getRe_level();
 			<table width="800" border="1" cellspacing="0" cellpadding="0" bgcolor="<%=bodyback_c%>" align="center">
 				<tr>
 					<td width=30% bgcolor="<%=value_c%>" align="center">작성자 ID</td>
-					<td><input type="text" size=70% maxlength="10" name="writer" placeholder="작성자 ID를 입력하세요"></td>
+					<td><input type="text" size=70% maxlength="10" name="writer" value="<%=loginId %>" readonly="readonly" ></td>
 				</tr>
 				<tr>
 					<td width=30% bgcolor="<%=value_c%>" align="center">제 목</td>

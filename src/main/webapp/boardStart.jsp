@@ -9,6 +9,7 @@
 <body>
 <a href = "boardWriteForm.bo">게시판글쓰기</a>
 <a href = "boardList.bo">게시판목록</a>
+<a href = "qboardList.qu">게시판목록</a>
 
 </body>
 </html>

@@ -19,7 +19,7 @@ public class BoardUpdateFormAction implements Action {
 		
 	    BoardVO article = boardUpdateFormService.getUpdateArticle(num);
 	    request.setAttribute("article", article);
-	    request.setAttribute(pageNum, pageNum);
+	    request.setAttribute("pageNum", pageNum);
 	    
 	    ActionForward forward = new ActionForward();
 	    forward.setUrl("board/updateForm.jsp");

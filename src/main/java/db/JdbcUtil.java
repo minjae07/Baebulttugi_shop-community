@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 
 
 public class JdbcUtil {
-	static {
+	/*static {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
@@ -23,7 +23,7 @@ public class JdbcUtil {
 			e.printStackTrace();
 		}
 	}
-	
+	*/
 	
 	public static Connection getConnection() {
 		Connection con = null;
